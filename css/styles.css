@@ -475,7 +475,7 @@ max-width: 264px;
 
 .subscribtion-wrapper {
     display: flex;
-    gap: 16px;
+    gap: 24px;
 
 }
 
@@ -544,8 +544,7 @@ max-width: 264px;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: opacity, visibility;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 250ms;
 }
 
@@ -553,6 +552,7 @@ max-width: 264px;
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 72px 24px 24px 24px;
     transform: translateX(-50%) translateY(-70%);
     width: 408px;
     min-height: 584px;
@@ -560,8 +560,7 @@ max-width: 264px;
     background: #fcfcfc;
     border-radius: 4px;
     opacity: 0;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: opacity, transform;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 250ms;
 }
 
@@ -587,9 +586,10 @@ max-width: 264px;
     height: 24px;
     top: 24px;
     left: 360px;
+    padding: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #e7e9fc;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
@@ -598,9 +598,11 @@ max-width: 264px;
 
 .modal-close-btn:hover, .modal-close-btn:focus {
     background-color: #404bbf;
+    border: none;
 }
 
-.modal-close-btn:hover > .close-btn {
+.modal-close-btn:hover,
+.modal-close-btn:focus > .close-btn {
     fill: #fff;
 }
 
@@ -624,6 +626,10 @@ max-width: 264px;
     margin: 0 24px;
 }
 
+.modal-form-wrapper {
+    margin-bottom: 8px;
+}
+
 .modal-input {
     display: block;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -631,7 +637,9 @@ max-width: 264px;
     width: 100%;
     height: 40px;
     padding: 11px 38px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-icon {
@@ -641,13 +649,14 @@ max-width: 264px;
     transform: translateY(-50%);
     fill: #2e2f42;
     pointer-events: none;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-label {
+    display: block;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     margin-bottom: 4px;
@@ -674,7 +683,7 @@ max-width: 264px;
     resize: none;
     outline: transparent;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     }
 
@@ -685,7 +694,7 @@ max-width: 264px;
 .submit-btn {
     border-radius: 4px;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: #4d5ae5;
@@ -695,6 +704,7 @@ max-width: 264px;
     letter-spacing: 0.04em;
     text-align: center;
     color: #fff;
+    border: none;
     margin: 0 auto;
     border: 1px solid transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -705,11 +715,15 @@ max-width: 264px;
     background-color: #404bbf;
 }
 
+.form-agreement {
+    margin-bottom: 24px;
+}
+
 .agreement-wrapper {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
@@ -724,9 +738,8 @@ max-width: 264px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: color background-color;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agreement-link {
@@ -738,8 +751,8 @@ max-width: 264px;
 
 input[type="checkbox"]:checked + .agreement-wrapper > .checkbox {
     background-color: #404bbf;
-    color: #f4f4fd;
-    border: 1px solid #404bbf;
+    fill: #f4f4fd;
+    border: none;
 }
 
 .agreement-checkbox-icon {
